@@ -14,16 +14,22 @@ variable "environment" {
   type    = string
 }
 
-variable "sg_id" {
+variable "ami_id" {
+  type    = string
+}
+
+variable "sg_ids" {
   type    = list(string)
 }
 
 
 variable "instances" {
   type    = list(string)
-  default = ["mongodb"]
+  default = ["default"]
 }
 
+#default value shows empty, which means this variable is optional
+#if use provide the inputs to this variable in a dict manner, then it will be used in the code, otherwise it will be ignored
 variable "tags" {
   type = map(string)
   default = {}
