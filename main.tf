@@ -1,5 +1,4 @@
 resource "aws_instance" "ec2_instance" {
-  count         = length(var.instances)
   ami           = var.ami_id
   region        = var.region
   instance_type = var.instance_type
